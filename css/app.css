@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  background: #30c27c; }
+  .header h1 {
+    display: none; }
+  .header .logo {
+    height: 26px;
+    margin-left: 8px; }
+  .header .download {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0 10px;
+    line-height: 30px;
+    right: 8px;
+    display: inline-block;
+    border-radius: 30px;
+    position: absolute;
+    cursor: not-allowed;
+    user-select: none; }
+
+.window {
+  width: 100%;
+  overflow: hidden; }
+  .window > .slides {
+    display: flex;
+    transition: .3s; }
+    .window > .slides .slidesItem > a {
+      display: block; }
+      .window > .slides .slidesItem > a > img {
+        width: 100%;
+        display: block; }
+
+body {
+  background: #f4f4f4; }

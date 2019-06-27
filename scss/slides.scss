@@ -1,0 +1,17 @@
+.window{
+  width: 100%;
+  overflow: hidden;
+  >.slides{
+    display: flex;
+    transition: .3s;
+    .slidesItem{
+    >a{
+        display: block;
+        >img{
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import 'var';
+@import 'reset';
+@import 'rec';
+@import 'header';
+@import 'slides';
+
+body {
+  background: $body-background;
+}
