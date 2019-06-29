@@ -7,6 +7,7 @@ function render(json) {
   renderSlide(json.data.slider)
   renderRadio(json.data.radioList)
   renderList(json.data.songList)
+  lazyload(document.querySelectorAll('.lazyload'))
 }
 
 function renderSlide(slides) {  
@@ -23,7 +24,7 @@ function renderRadio(radios) {
   document.querySelector('.radio .list').innerHTML = radios.map(radio => `
   <div class="listItem">
   <div class="listMedia">
-    <img src="${radio.picUrl}" alt="封面">
+    <img class="lazyload" data-src="${radio.picUrl}" alt="封面">
     <span class="icon icon-play"></span>
   </div>
   <div class="listInfo">${radio.Ftitle}</div>
@@ -33,7 +34,7 @@ function renderList(songLists) {
   document.querySelector('.hotList .list').innerHTML = songLists.map(list=>`
   <div class="listItem">
   <div class="listMedia">
-    <img src="${list.picUrl}" alt="封面">
+    <img class="lazyload" data-src="${list.picUrl}" alt="封面">
     <span class="icon icon-play"></span>
   </div>
   <div class="listInfo">${list.songListDesc}

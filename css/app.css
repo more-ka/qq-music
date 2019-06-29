@@ -55,6 +55,13 @@ ul, ol {
         font-weight: 400;
         padding-bottom: 16px;
         font-size: 14px; }
+      .radio .list .listItem .listAuthor,
+      .hotList .list .listItem .listAuthor {
+        margin-top: 4px;
+        font-size: 14px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden; }
 
 .header {
   display: flex;
