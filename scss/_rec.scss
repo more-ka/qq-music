@@ -1,4 +1,5 @@
-.radio{
+.radio,
+.hotList {
   margin: 8px 0 8px 8px;
   .title {
     font-size: 16px;
@@ -41,7 +42,13 @@
         padding-bottom: 16px;
         font-size: 14px;
       }
-
+      .listAuthor{
+        margin-top: 4px;
+        font-size: 14px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
     }
   }
 }
