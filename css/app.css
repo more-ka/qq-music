@@ -3,6 +3,51 @@
   padding: 0;
   box-sizing: border-box; }
 
+h1 {
+  margin: 0; }
+
+ul, ol {
+  padding: 0;
+  list-style: none; }
+
+.radio {
+  margin: 8px 0 8px 8px; }
+  .radio .title {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 8px; }
+  .radio .list {
+    display: flex;
+    flex-wrap: wrap; }
+    .radio .list .listItem {
+      background: white;
+      width: 40%;
+      flex: 1;
+      margin-right: 8px;
+      margin-bottom: 10px; }
+      .radio .list .listItem .listMedia {
+        position: relative; }
+        .radio .list .listItem .listMedia img {
+          display: block;
+          width: 100%; }
+        .radio .list .listItem .listMedia .icon-play {
+          position: absolute;
+          right: 8px;
+          bottom: 8px;
+          width: 24px;
+          height: 24px;
+          background: url(../images/icon-play.png) no-repeat 0 0;
+          background-size: cover; }
+      .radio .list .listItem .listInfo {
+        line-height: 18px;
+        padding: 5px 7px 5px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-weight: 400;
+        padding-bottom: 16px;
+        font-size: 14px; }
+
 .header {
   display: flex;
   align-items: center;
@@ -34,7 +79,32 @@
       display: block; }
       .window > .slides .slidesItem > a > img {
         width: 100%;
-        display: block; }
+        display: block;
+        background-size: cover; }
+
+.hide {
+  display: none; }
+
+.tabs ul {
+  display: flex; }
+  .tabs ul li {
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    height: 40px;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 0.6);
+    position: relative; }
+    .tabs ul li.active {
+      color: #31c27c; }
+    .tabs ul li.active::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      background: #31c27c; }
 
 body {
   background: #f4f4f4; }

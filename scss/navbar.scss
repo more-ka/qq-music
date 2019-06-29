@@ -1,0 +1,26 @@
+.tabs {
+  ul {
+    display: flex;
+    li {
+      text-align: center;
+      cursor: pointer;
+      flex: 1;
+      height: 40px;
+      line-height: 40px;
+      color: rgba(0, 0, 0, 0.6);
+      position: relative;
+      &.active {
+        color: #31c27c;
+      }
+      &.active::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background: #31c27c;
+      }
+    }
+  }
+}

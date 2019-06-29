@@ -1,0 +1,47 @@
+.radio{
+  margin: 8px 0 8px 8px;
+  .title {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 8px;
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    .listItem {
+      background: white;
+      width: 40%;
+      flex: 1;
+      margin-right: 8px;
+      margin-bottom: 10px;
+      .listMedia {
+        position: relative;
+        img {
+          display: block;
+          width: 100%;
+        }
+
+        .icon-play {
+          position: absolute;
+          right: 8px;
+          bottom: 8px;
+          width: 24px;
+          height: 24px;
+          background: url(../images/icon-play.png) no-repeat 0 0;
+          background-size: cover;
+        }
+      }
+      .listInfo {
+        line-height: 18px;
+        padding: 5px 7px 5px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-weight: 400;
+        padding-bottom: 16px;
+        font-size: 14px;
+      }
+
+    }
+  }
+}

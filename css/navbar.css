@@ -1,0 +1,19 @@
+.tabs ul {
+  display: flex; }
+  .tabs ul li {
+    text-align: center;
+    flex: 1;
+    height: 40px;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 0.6);
+    position: relative; }
+    .tabs ul li.active {
+      color: #31c27c; }
+    .tabs ul li.active::before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      background: #31c27c; }
