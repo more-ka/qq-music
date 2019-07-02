@@ -3,11 +3,36 @@
   .then(res => res.json())
   .then(render)
 
+  fetch('/json/toplist.json')
+  .then(res => res.json())
+  .then(json => json.data.topList)
+  .then(renderToplist)
+function renderToplist(listData){
+  document.querySelector('.toplistView').innerHTML = listData.map(list=>`<div class="listItem">
+  <div class="picture" >
+      <img src="" alt="" style="width:100px;height:100px;">
+    </div>
+    <div class="content">
+      <div class="title">${list.topTitle}</div>
+      ${songList(list.songList)}
+    </div>
+</div>`).join('')
+}
+
+function songList(songs){
+  return songs.map((song,i) =>
+  `<p>${i+1}
+    <span class="name">${song.songname}</span>
+    <span class="singer">- ${song.singername}</span>
+  </p>
+  `).join('')
+}
+
 function render(json) {  
-  renderSlide(json.data.slider)
-  renderRadio(json.data.radioList)
-  renderList(json.data.songList)
-  lazyload(document.querySelectorAll('.lazyload'))
+  // renderSlide(json.data.slider)
+  // renderRadio(json.data.radioList)
+  // renderList(json.data.songList)
+  // lazyload(document.querySelectorAll('.lazyload'))
 }
 
 function renderSlide(slides) {  

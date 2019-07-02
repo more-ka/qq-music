@@ -17,27 +17,27 @@
   </header>
   <nav class="tabs">
     <ul>
-      <li class="active" data-role="tabs" data-view="commentView">推荐</li>
-      <li data-role="tabs" data-view="toplistView">排行榜</li>
+        <li  class="active" data-role="tabs" data-view="toplistView">排行榜</li>
+        <li data-role="tabs" data-view="commentView">推荐</li>
       <li data-role="tabs" data-view="searchView">搜索</li>
     </ul>
   </nav>
   <div class="content">
-    <div class="commentView">
+    <div class="toplistView"></div>
+    <div class="commentView" hide>
       <div class="window" id="window"></div>
       <div class="playList">
-          <div class="radio">
-              <h3 class="title">电台</h3>
-              <div class="list"></div>
-          </div>
-          <div class="hotList">
-              <h3 class="title">热门歌单</h3>
-              <div class="list"></div>
-          </div>
+        <div class="radio">
+          <h3 class="title">电台</h3>
+          <div class="list"></div>
+        </div>
+        <div class="hotList">
+          <h3 class="title">热门歌单</h3>
+          <div class="list"></div>
+        </div>
       </div>
-      
     </div>
-    <div class="toplistView hide">toplist</div>
+
     <div class="searchView hide">search</div>
   </div>
 </body>

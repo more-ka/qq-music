@@ -1,0 +1,34 @@
+.listItem{
+  margin: 10px;
+  height: 100px;
+  background: #fff;
+}
+.toplistView .picture{
+  float: left;
+  margin-right: 12px;
+}
+.toplistView .picture img{
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background: url(../images/yamaha.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+.toplistView .content{
+  margin-top: 4px;
+  float: left;
+  width: 270px;
+}
+.toplistView .content .title{
+  margin: 5px 0;
+}
+.toplistView .content p{
+  color: rgba(0,0,0,0.5);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.content p .name{
+  color: black;
+  margin-left: 4px;
+}
