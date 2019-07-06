@@ -4,15 +4,39 @@
   background: #e7e4e463;
   text-align: center;
   padding: 10px 24px;
+  input{
+    padding: 0.5em;
+    height: 36px;
+    width: 100%;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #eee;
+    &:focus{
+      box-shadow: inset 0 1px 3px rgba(0,0,0,.5);
+    }
+  }
 }
-.searchBar .input{
-  padding: 0.5em;
-  height: 36px;
-  width: 100%;
-  border-radius: 4px;
-  outline: none;
-  border: 1px solid #eee;
-}
-.searchBar .input:focus{
-  box-shadow: inset 0 1px 3px rgba(0,0,0,.5);
+.searchList{
+  .songItem{
+    height: 55px;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    .icon{
+      background: url(../images/search_sprite.png) no-repeat 0 0;
+      background-size: cover;
+      width: 20px;
+      height: 18px;
+      float: left;
+      margin: 18.5px;
+    }
+    .songName{
+      padding: 8px 0 2px;
+      font-size: 16px;
+      height: 30px;
+    }
+    .songSinger{
+      color: rgba(0,0,0,0.5);
+      font-size: 12px;
+    }
+  }
 }

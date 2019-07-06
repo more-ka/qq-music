@@ -1,7 +1,9 @@
 .toplistView .listItem {
   margin: 10px;
   height: 100px;
-  background: #fff; }
+  width: 100%;
+  background: #fff;
+  font-size: 14px; }
 
 .toplistView .picture {
   float: left;
@@ -17,7 +19,7 @@
 .toplistView .content {
   margin-top: 4px;
   float: left;
-  width: 270px; }
+  width: 240px; }
 
 .toplistView .content .title {
   margin: 5px 0; }

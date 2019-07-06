@@ -124,7 +124,9 @@ ul, ol {
 .toplistView .listItem {
   margin: 10px;
   height: 100px;
-  background: #fff; }
+  width: 100%;
+  background: #fff;
+  font-size: 14px; }
 
 .toplistView .picture {
   float: left;
@@ -140,7 +142,7 @@ ul, ol {
 .toplistView .content {
   margin-top: 4px;
   float: left;
-  width: 270px; }
+  width: 240px; }
 
 .toplistView .content .title {
   margin: 5px 0; }
@@ -161,17 +163,34 @@ ul, ol {
   background: #e7e4e463;
   text-align: center;
   padding: 10px 24px; }
+  .searchBar input {
+    padding: 0.5em;
+    height: 36px;
+    width: 100%;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #eee; }
+    .searchBar input:focus {
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); }
 
-.searchBar .input {
-  padding: 0.5em;
-  height: 36px;
+.searchList .songItem {
+  height: 55px;
   width: 100%;
-  border-radius: 4px;
-  outline: none;
-  border: 1px solid #eee; }
-
-.searchBar .input:focus {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+  border-bottom: 1px solid #e5e5e5; }
+  .searchList .songItem .icon {
+    background: url(../images/search_sprite.png) no-repeat 0 0;
+    background-size: cover;
+    width: 20px;
+    height: 18px;
+    float: left;
+    margin: 18.5px; }
+  .searchList .songItem .songName {
+    padding: 8px 0 2px;
+    font-size: 16px;
+    height: 30px; }
+  .searchList .songItem .songSinger {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px; }
 
 body {
   background: #f4f4f4; }
