@@ -10,15 +10,16 @@
 function renderToplist(listData){
   document.querySelector('.toplistView').innerHTML = listData.map(list=>`<div class="listItem">
   <div class="picture" >
-      <img src="" alt="" style="width:100px;height:100px;">
+      <img class="lazyload" data-src="${list.picUrl}" alt="" style="width:100px;height:100px;">
     </div>
     <div class="content">
       <div class="title">${list.topTitle}</div>
       ${songList(list.songList)}
     </div>
 </div>`).join('')
-}
+lazyload(document.querySelectorAll('.toplistView .lazyload'))
 
+}
 function songList(songs){
   return songs.map((song,i) =>
   `<p>${i+1}
@@ -29,11 +30,13 @@ function songList(songs){
 }
 
 function render(json) {  
-  // renderSlide(json.data.slider)
-  // renderRadio(json.data.radioList)
-  // renderList(json.data.songList)
-  // lazyload(document.querySelectorAll('.lazyload'))
+  renderSlide(json.data.slider)
+  renderRadio(json.data.radioList)
+  renderList(json.data.songList)
+  lazyload(document.querySelectorAll('.lazyload'))
 }
+
+let search = new Search(document.querySelector('.searchView'))
 
 function renderSlide(slides) {  
   slides = slides.map( slide => {

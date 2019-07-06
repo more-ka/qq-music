@@ -1,12 +1,15 @@
 const express = require('express')
 const request = require('request-promise')
+const cors = require('cors')
 const app = express()
+
 let HEADERS = {
   'Referer': 'https://y.qq.com/m/index.html',
   'Accept': 'application/json',
   'Origin': 'https://y.qq.com',
   'User-Agent': 'Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36'
 }
+app.use(cors())
 app.get('/',async (req,res)=>{
   let url=`https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?_=${new Date()}&g_tk=5381&uin=0&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1`
   try{

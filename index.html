@@ -17,14 +17,13 @@
   </header>
   <nav class="tabs">
     <ul>
-        <li  class="active" data-role="tabs" data-view="toplistView">排行榜</li>
-        <li data-role="tabs" data-view="commentView">推荐</li>
+      <li class="active" data-role="tabs" data-view="commentView">推荐</li>
+      <li data-role="tabs" data-view="toplistView">排行榜</li>
       <li data-role="tabs" data-view="searchView">搜索</li>
     </ul>
   </nav>
   <div class="content">
-    <div class="toplistView"></div>
-    <div class="commentView" hide>
+    <div class="commentView">
       <div class="window" id="window"></div>
       <div class="playList">
         <div class="radio">
@@ -37,11 +36,18 @@
         </div>
       </div>
     </div>
-
-    <div class="searchView hide">search</div>
+    <div class="toplistView hide"></div>
+    <div class="searchView hide">
+        <div class="searchBar">
+            <input class="input" type="text" placeholder="搜索歌曲、歌单、专辑">
+        </div>
+        <ul class="searchList">
+        </ul>
+    </div>
   </div>
 </body>
 <script src="./script/slides.js"></script>
+<script src="./script/search.js"></script>
 <script src="./script/lazyload.js"></script>
 <script src="./script/tabs.js"></script>
 <script src="./script/app.js"></script>

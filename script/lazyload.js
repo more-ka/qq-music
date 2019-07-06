@@ -1,5 +1,5 @@
 function lazyload(images) {
-  let imgs = [].slice.call(images);
+  let imgs = [].slice.call(images)
 
   if('IntersectionObserver' in window){
     let observer = new IntersectionObserver(function(entries){

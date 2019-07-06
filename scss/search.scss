@@ -1,0 +1,18 @@
+.searchBar{
+  height: 56px;
+  width: 100%;
+  background: #e7e4e463;
+  text-align: center;
+  padding: 10px 24px;
+}
+.searchBar .input{
+  padding: 0.5em;
+  height: 36px;
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #eee;
+}
+.searchBar .input:focus{
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.5);
+}
