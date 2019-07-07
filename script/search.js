@@ -4,38 +4,79 @@ class Search {
     this.$input = this.$el.querySelector(".input");
     this.$input.addEventListener("keyup", this.onKeyUp.bind(this));
     this.$songList = this.$el.querySelector(".searchList");
-    this.keyword = ''
-    this.page = 1
-    this.songs = []
-    this.prepage = 20
+    this.$clear = this.$el.querySelector(".clear");
+    this.keyword = "";
+    this.page = 1;
+    this.songs = [];
+    this.prepage = 20;
+    this.fetching = false;
+    this.nomore = false;
+    this.$clear.addEventListener('click',()=>{this.$input.value = '';this.reset()})
+    window.addEventListener("scroll", this.onScroll.bind(this));
+  }
+
+  onScroll() {
+    if (this.nomore) return;
+    if (this.fetching) return;
+    if (
+      document.documentElement.clientHeight + pageYOffset >
+      document.body.scrollHeight - 50
+    ) {
+      this.search(this.keyword, this.page + 1);
+    }
   }
 
   onKeyUp(event) {
-    let keyword = event.target.value.trim()
-    if (event.key !== 'Enter') return
-    console.log('1');
-    this.search(keyword)
+    let keyword = event.target.value.trim();
+    if (!keyword) {
+      this.reset();
+    }
+    if (event.key !== "Enter") return;
+    this.search(keyword);
   }
-  search(keyword) {
-    this.keyword = keyword
-    console.log('2');
-
-    fetch(`http://localhost:4000/search?keyword=${this.keyword}&page=${this.page}`)
+  reset() {
+    this.page = 1;
+    this.songs = [];
+    this.keyword = "";
+    this.$songList.innerHTML = "";
+  }
+  search(keyword, page) {
+    this.keyword = keyword;
+    this.fetching = true;
+    fetch(
+      `http://localhost:4000/search?keyword=${this.keyword}&page=${page ||
+        this.page}`
+    )
       .then(res => res.json())
-      .then(json => json.data.song.list)
+      .then(json => {
+        this.page = json.data.song.curpage;
+        this.nomore = json.data.song.curnum === 0;
+        return json.data.song.list;
+      })
       .then(songs => this.append(songs))
-      
+      .then(() => (this.fetching = false));
   }
   append(songs) {
-    console.log(songs);
-    
-    let html = songs.map(song => `
+    let html = songs
+      .map(
+        song => `
       <li class="songItem">
         <i class="icon icon-music"></i>
-        <div class="songName">${song.songname}</div>
-        <div class="songSinger">${song.singer.map(s=>s.name).join(' ')}</div>
-      </li>`).join('')
-      this.$songList.insertAdjacentHTML('beforeend',html)
-
+        <div class="songName" ellipsis>${song.songname}</div>
+        <div class="songSinger" ellipsis>${song.singer
+          .map(s => s.name)
+          .join(" ")}</div>
+      </li>`
+      )
+      .join("");
+    this.$songList.insertAdjacentHTML("beforeend", html);
+    if (this.nomore) {
+      this.$songList.insertAdjacentHTML(
+        "beforeend",
+        `<li class="nomore">
+        没有更多了
+       </li>`
+      );
+    }
   }
 }
