@@ -44,7 +44,7 @@
           color: #31c27c; }
   .player .playerFooter {
     width: 100%;
-    height: 14vh;
+    height: 20vh;
     bottom: 0;
     position: fixed; }
     .player .playerFooter .progressWrapper {
