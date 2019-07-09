@@ -69,6 +69,7 @@ class Search {
       </li>`
       )
       .join("");
+
     this.$songList.insertAdjacentHTML("beforeend", html);
     if (this.nomore) {
       this.$songList.insertAdjacentHTML(

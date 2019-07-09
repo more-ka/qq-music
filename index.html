@@ -13,7 +13,7 @@
   <header class="header">
     <h1>QQ 音乐</h1>
     <img src="images/logo.png" alt="logo" class="logo">
-    <a class="download">下载app</a>
+    <a class="download">播放器</a>
   </header>
   <nav class="tabs">
     <ul>
@@ -23,21 +23,8 @@
     </ul>
   </nav>
   <div class="content">
-    <div class="commentView">
-
-
-      <div class="searchView">
-        <div class="searchBar">
-            <input class="input" type="text" placeholder="搜索歌曲、歌单、专辑">
-            <button class="clear">清空</button>
-        </div>
-        <ul class="searchList"></ul>
-    </div>
-
-
-
-
-      <!-- <div class="window" id="window"></div>
+    <section class="commentView">
+      <div class="window" id="window"></div>
       <div class="playList">
         <div class="radio">
           <h3 class="title">电台</h3>
@@ -48,15 +35,49 @@
           <div class="list"></div>
         </div>
       </div>
-    </div>
-    <div class="toplistView hide"></div> -->
-    
+    </section>
+    <section class="toplistView hide"></section>
+    <section class="searchView hide">
+      <div class="searchBar">
+        <input class="input" type="text" placeholder="搜索歌曲、歌单、专辑">
+        <button class="clear">清空</button>
+      </div>
+      <ul class="searchList"></ul>
+    </section>
   </div>
+  <section class="player">
+    <div class="content">
+      <div class="playerTitle">
+        <h3 class="name">等待的风</h3>
+        <p class="singer">伍伍慧</p>
+      </div>
+      <ul class="playerLyric">
+        <li class="name active">伍伍慧11111111111111111111</li>
+        <li class="name">伍伍慧2222222222222</li>
+        <li class="name">伍伍慧伍伍慧伍伍慧伍伍慧伍伍慧伍伍慧伍伍慧</li>
+
+      </ul>
+    </div>
+    <div class="playerFooter">
+      <div class="progressWrapper">
+        <div class="currenTime time">0:08</div>
+        <div class="progress">
+          <div class="bar"></div>
+        </div>
+        <div class="allTime time">5:10</div>
+      </div>
+      <div class="control">
+        <i class="play icon-play"></i>
+        <i class="play icon-list"></i>        
+      </div>
+    </div>
+    <div class="bg"></div>
+
+  </section>
 </body>
 <script src="./script/slides.js"></script>
 <script src="./script/search.js"></script>
 <script src="./script/lazyload.js"></script>
 <script src="./script/tabs.js"></script>
 <script src="./script/app.js"></script>
-
 </html>
