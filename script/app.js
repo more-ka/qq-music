@@ -7,6 +7,7 @@
   .then(res => res.json())
   .then(json => json.data.topList)
   .then(renderToplist)
+
 function renderToplist(listData){
   document.querySelector('.toplistView').innerHTML = listData.map(list=>`<div class="listItem">
   <div class="picture" >
@@ -36,8 +37,17 @@ function render(json) {
   lazyload(document.querySelectorAll('.lazyload'))
 }
 
-let search = new Search(document.querySelector('.searchView'))
+document.querySelector('.playerButton').addEventListener('click',function(){
+  document.querySelector('.player').classList.remove('hide')
+})
+document.querySelector('.icon-list').addEventListener('click',function(){
+  document.querySelector('.player').classList.add('hide')
+})
 
+let search = new Search(document.querySelector('.searchView'))
+let musicPlayer = new MusicPlayer(document.querySelector('.player'))
+// let search = new Search(document.querySelector('.searchView'))
+window.player = musicPlayer
 function renderSlide(slides) {  
   slides = slides.map( slide => {
     return {link: slide.linkUrl,image: slide.picUrl}

@@ -1,7 +1,7 @@
 .player {
-  width: 100%;
+  width: 102%;
   height: 100vh;
-  // background: rgba(0,0,0,0.5);
+  margin-left: -4px;
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -23,9 +23,10 @@
   }
 
   .content {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     text-align: center;
+
     .playerTitle {
       width: 100%;
       height: 10vh;
@@ -42,14 +43,15 @@
       }
     }
 
-    .playerLyric {
+    .playerLyricWrapper {
       width: 100%;
-      padding-top: 10%;
-      height: 72vh;
-      white-space: wrap;
+      padding-top: 12%;
+      height: 60vh;
+      overflow: hidden;
       li {
         line-height: 28px;
         height: 28px;
+        white-space: wrap;
 
         &.active {
           color: #31c27c;
@@ -60,14 +62,14 @@
   }
 
   .playerFooter {
-    width: 100%;
+    width: 102%;
     height: 20vh;
     bottom: 0;
     position: fixed;
 
     .progressWrapper {
       width: 100%;
-
+      margin:0 2%;
       >div {
         display: inline-block;
         font-size: 14px;
@@ -75,16 +77,22 @@
       }
 
       .time {
-        width: 9%;
+        width: 10%;
         height: 28px;
         line-height: 28px;
       }
 
       .progress {
         margin: 1% 0;
-        width: 79%;
+        width: 73%;
         height: 4px;
         background: #fff;
+        overflow: hidden;
+        .bar{
+          widows: 100%;
+          height: 100%;
+          background: #31c27c;
+        }
       }
     }
 
@@ -92,30 +100,34 @@
       margin-top: 3%;
       height: 48px;
       position: relative;
+
       .play {
         width: 48px;
         height: 48px;
         display: inline-block;
-        &.icon-play{
-          position: absolute;
-          left: 50%;
-          margin-left: -24px;
+        position: absolute;
+        left: 50%;
+        margin-left: -24px;
+
+        &.icon-play {
           background: url(../images/css_sprites.png) no-repeat 0 0;
           background-size: cover;
         }
-        &.icon-pause{
+
+        &.icon-pause {
           background: url(../images/css_sprites.png) no-repeat 0 0;
           background-size: cover;
           background-position: -47px 0px;
         }
-        &.icon-list{
-          position: absolute;
-          right: 5%;
-          background: url(../images/css_sprites.png) no-repeat 0 0;
-          background-size: cover;
-          background-position: -94px 0px;
-
-        }
+      }
+      .icon-list {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        right: 5%;
+        background: url(../images/css_sprites.png) no-repeat 0 0;
+        background-size: cover;
+        background-position: -94px 0px;
       }
     }
   }

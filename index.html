@@ -13,7 +13,7 @@
   <header class="header">
     <h1>QQ 音乐</h1>
     <img src="images/logo.png" alt="logo" class="logo">
-    <a class="download">播放器</a>
+    <a class="playerButton">播放器</a>
   </header>
   <nav class="tabs">
     <ul>
@@ -51,30 +51,28 @@
         <h3 class="name">等待的风</h3>
         <p class="singer">伍伍慧</p>
       </div>
-      <ul class="playerLyric">
-        <li class="name active">伍伍慧11111111111111111111</li>
-        <li class="name">伍伍慧2222222222222</li>
-        <li class="name">伍伍慧伍伍慧伍伍慧伍伍慧伍伍慧伍伍慧伍伍慧</li>
-
-      </ul>
+      <div class="playerLyricWrapper"></div>
     </div>
     <div class="playerFooter">
       <div class="progressWrapper">
-        <div class="currenTime time">0:08</div>
-        <div class="progress">
-          <div class="bar"></div>
-        </div>
-        <div class="allTime time">5:10</div>
+          <div class="currentTime time"></div>
+          <div class="progress">
+            <div class="bar"></div>
+          </div>
+          <div class="duration time"></div>
       </div>
       <div class="control">
         <i class="play icon-play"></i>
-        <i class="play icon-list"></i>        
+        <i class="icon-list"></i>        
       </div>
     </div>
     <div class="bg"></div>
 
   </section>
 </body>
+<script src="./script/musicLyric.js"></script>
+<script src="./script/mucisProgress.js"></script>
+<script src="./script/musicPlayer.js"></script>
 <script src="./script/slides.js"></script>
 <script src="./script/search.js"></script>
 <script src="./script/lazyload.js"></script>

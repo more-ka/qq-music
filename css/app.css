@@ -73,7 +73,7 @@ ul, ol {
   .header .logo {
     height: 26px;
     margin-left: 8px; }
-  .header .download {
+  .header .playerButton {
     border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 0 10px;
     line-height: 30px;
@@ -212,8 +212,9 @@ ul, ol {
   text-align: center; }
 
 .player {
-  width: 100%;
+  width: 102%;
   height: 100vh;
+  margin-left: -4px;
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -232,7 +233,7 @@ ul, ol {
     transform: scale(1.15);
     z-index: -1; }
   .player .content {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     text-align: center; }
     .player .content .playerTitle {
@@ -245,36 +246,43 @@ ul, ol {
       .player .content .playerTitle .singer {
         font-size: 14px;
         color: rgba(0, 0, 0, 0.5); }
-    .player .content .playerLyric {
+    .player .content .playerLyricWrapper {
       width: 100%;
-      padding-top: 10%;
-      height: 72vh;
-      white-space: wrap; }
-      .player .content .playerLyric li {
+      padding-top: 12%;
+      height: 60vh;
+      overflow: hidden; }
+      .player .content .playerLyricWrapper li {
         line-height: 28px;
-        height: 28px; }
-        .player .content .playerLyric li.active {
+        height: 28px;
+        white-space: wrap; }
+        .player .content .playerLyricWrapper li.active {
           color: #31c27c; }
   .player .playerFooter {
-    width: 100%;
+    width: 102%;
     height: 20vh;
     bottom: 0;
     position: fixed; }
     .player .playerFooter .progressWrapper {
-      width: 100%; }
+      width: 100%;
+      margin: 0 2%; }
       .player .playerFooter .progressWrapper > div {
         display: inline-block;
         font-size: 14px;
         text-align: center; }
       .player .playerFooter .progressWrapper .time {
-        width: 9%;
+        width: 10%;
         height: 28px;
         line-height: 28px; }
       .player .playerFooter .progressWrapper .progress {
         margin: 1% 0;
-        width: 79%;
+        width: 73%;
         height: 4px;
-        background: #fff; }
+        background: #fff;
+        overflow: hidden; }
+        .player .playerFooter .progressWrapper .progress .bar {
+          widows: 100%;
+          height: 100%;
+          background: #31c27c; }
     .player .playerFooter .control {
       margin-top: 3%;
       height: 48px;
@@ -282,23 +290,25 @@ ul, ol {
       .player .playerFooter .control .play {
         width: 48px;
         height: 48px;
-        display: inline-block; }
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        margin-left: -24px; }
         .player .playerFooter .control .play.icon-play {
-          position: absolute;
-          left: 50%;
-          margin-left: -24px;
           background: url(../images/css_sprites.png) no-repeat 0 0;
           background-size: cover; }
         .player .playerFooter .control .play.icon-pause {
           background: url(../images/css_sprites.png) no-repeat 0 0;
           background-size: cover;
           background-position: -47px 0px; }
-        .player .playerFooter .control .play.icon-list {
-          position: absolute;
-          right: 5%;
-          background: url(../images/css_sprites.png) no-repeat 0 0;
-          background-size: cover;
-          background-position: -94px 0px; }
+      .player .playerFooter .control .icon-list {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        right: 5%;
+        background: url(../images/css_sprites.png) no-repeat 0 0;
+        background-size: cover;
+        background-position: -94px 0px; }
 
 body {
   background: #f4f4f4; }

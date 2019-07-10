@@ -1,8 +1,7 @@
 {
     "code": 0,
     "data": {
-        "slider": [
-            {
+        "slider": [{
                 "linkUrl": "https://y.qq.com/m/digitalbum/gold/index.html?openinqqmusic=1&_video=true&id=6660827&g_f=shoujijiaodian",
                 "picUrl": "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1392306.jpg",
                 "id": 21482
@@ -28,8 +27,7 @@
                 "id": 21759
             }
         ],
-        "radioList": [
-            {
+        "radioList": [{
                 "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_199_13_1.jpg",
                 "Ftitle": "热歌",
                 "radioid": 199
@@ -40,8 +38,7 @@
                 "radioid": 307
             }
         ],
-        "songList": [
-            {
+        "songList": [{
                 "songListDesc": "催泪大杀器！盘点演唱会经典万人大合唱",
                 "picUrl": "http://p.qpic.cn/music_cover/1Fr9IFMhWDPeUzWKVEjn3QTL2eX2QziaJmaL0ZAmsvtW71ic9IDUoYzg/300?n=1",
                 "id": "2646688496",
