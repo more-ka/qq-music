@@ -48,16 +48,17 @@
       padding-top: 12%;
       height: 60vh;
       overflow: hidden;
-      li {
-        line-height: 28px;
-        height: 28px;
-        white-space: wrap;
-
-        &.active {
-          color: #31c27c;
-        }
+      .playerLyric{
+        transition: all 0.7s;
+        li {
+          line-height: 28px;
+          height: 28px;
+          white-space: wrap;
+          &.active {
+            color: #31c27c;
+          }
+        }  
       }
-
     }
   }
 

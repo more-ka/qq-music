@@ -5,7 +5,7 @@ class MusicPlayer{
     this.button.addEventListener('click',this)
     this.createAudio()
     this.musicLyric = new MusicLyric(this.$el.querySelector('.playerLyricWrapper'))
-    this.musicProgress = new MusicProgress(this.$el.querySelector('.progressWrapper'), 8 , true)
+    this.musicProgress = new MusicProgress(this.$el.querySelector('.progressWrapper'), 230 , true)
   }
   createAudio(){
     let audio = document.createElement('audio')

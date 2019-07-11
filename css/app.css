@@ -251,12 +251,14 @@ ul, ol {
       padding-top: 12%;
       height: 60vh;
       overflow: hidden; }
-      .player .content .playerLyricWrapper li {
-        line-height: 28px;
-        height: 28px;
-        white-space: wrap; }
-        .player .content .playerLyricWrapper li.active {
-          color: #31c27c; }
+      .player .content .playerLyricWrapper .playerLyric {
+        transition: all 0.7s; }
+        .player .content .playerLyricWrapper .playerLyric li {
+          line-height: 28px;
+          height: 28px;
+          white-space: wrap; }
+          .player .content .playerLyricWrapper .playerLyric li.active {
+            color: #31c27c; }
   .player .playerFooter {
     width: 102%;
     height: 20vh;
