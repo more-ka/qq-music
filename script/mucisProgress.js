@@ -11,6 +11,7 @@ class MusicProgress {
     this.$currentTime.innerText = this.formatTime(this.currentTime);
     this.$duration.innerText = this.formatTime(this.duration);
     if (start) this.start();
+    this.reset()
   }
   start() {
     this.timer = setInterval(this.update.bind(this), 50);
@@ -20,19 +21,24 @@ class MusicProgress {
   }
   update() {
     this.currentTime += 0.05;
-    if(this.currentTime>this.duration) this.reset()
+    if (this.currentTime > this.duration) this.reset();
     this.progress = this.currentTime / this.duration;
     this.$progress.style.transform = `translate(${this.progress * 100 - 100}%)`;
     this.$currentTime.innerText = this.formatTime(this.currentTime);
   }
-  reset(duration){
-    this.pause()
-    this.currentTime = 0
-    this.duration = 0
-    if(duration){
-      this.duration = duration
-      this.$duration = this.formatTime(this.duration)
+  reset(duration) {
+    this.pause();
+    this.currentTime = 0;
+    this.duration = 0;
+    if (duration) {
+      this.duration = duration;
+      this.$duration.innerText = this.formatTime(this.duration);
     }
+  }
+  restart() {
+    this.reset();
+    this.update();
+    this.start();
   }
   render() {
     this.$el.innerHTML = `<div class="currentTime time"></div>

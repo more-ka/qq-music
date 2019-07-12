@@ -6,7 +6,8 @@
   overflow: hidden;
   top: 0;
   left: 0;
-
+  transition: 0.3s;
+  transform: translateY(0%);
   .bg {
     background-position: bottom center;
     background: url(../images/zxw.jpg) no-repeat 0 0;

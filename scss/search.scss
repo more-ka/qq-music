@@ -30,7 +30,10 @@
     height: 55px;
     width: 100%;
     border-bottom: 1px solid #e5e5e5;
-
+    padding-right: 1.5em;
+    display: block;
+    text-decoration: none;
+    color: inherit;
     .icon {
       background: url(../images/search_sprite.png) no-repeat 0 0;
       background-size: cover;

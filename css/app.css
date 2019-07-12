@@ -182,7 +182,11 @@ ul, ol {
 .searchList .songItem {
   height: 55px;
   width: 100%;
-  border-bottom: 1px solid #e5e5e5; }
+  border-bottom: 1px solid #e5e5e5;
+  padding-right: 1.5em;
+  display: block;
+  text-decoration: none;
+  color: inherit; }
   .searchList .songItem .icon {
     background: url(../images/search_sprite.png) no-repeat 0 0;
     background-size: cover;
@@ -218,7 +222,9 @@ ul, ol {
   position: fixed;
   overflow: hidden;
   top: 0;
-  left: 0; }
+  left: 0;
+  transition: 0.3s;
+  transform: translateY(0%); }
   .player .bg {
     background-position: bottom center;
     background: url(../images/zxw.jpg) no-repeat 0 0;
@@ -314,3 +320,6 @@ ul, ol {
 
 body {
   background: #f4f4f4; }
+
+.noScroll {
+  overflow: hidden; }

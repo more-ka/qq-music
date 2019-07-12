@@ -57,18 +57,15 @@ class Search {
       .then(() => (this.fetching = false));
   }
   append(songs) {
-    let html = songs
-      .map(
-        song => `
-      <li class="songItem">
+    let html = songs.map(song =>{
+      let artist = song.singer.map(s=>s.name).join(' ')
+        return  `
+      <a class="songItem" 
+      href="#player?artist=${artist}&songid=${song.songmid}&songname=${song.songname}&albumin=${song.songmid}&duration=${song.interval}">
         <i class="icon icon-music"></i>
         <div class="songName" ellipsis>${song.songname}</div>
-        <div class="songSinger" ellipsis>${song.singer
-          .map(s => s.name)
-          .join(" ")}</div>
-      </li>`
-      )
-      .join("");
+        <div class="songSinger" ellipsis>${artist}</div>
+      </a>`}).join("");
 
     this.$songList.insertAdjacentHTML("beforeend", html);
     if (this.nomore) {
