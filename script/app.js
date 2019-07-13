@@ -1,50 +1,14 @@
-(function() {
-  fetch("/json/rec.json")
-    .then(res => res.json())
-    .then(render);
+  import './tabs.js'
+  import {Search} from './search.js'
+  import {Recommend} from './recommend.js'
+  import {Toplist} from './toplist.js'
+  import {MusicPlayer} from './musicPlayer.js'
 
-  fetch("/json/toplist.json")
-    .then(res => res.json())
-    .then(json => json.data.topList)
-    .then(renderToplist);
+let toplist = new Toplist(document.querySelector('.toplistView')).launch()
+let recommend = new Recommend(document.querySelector('.commentView')).launch()
+let search = new Search(document.querySelector(".searchView"));
+let musicPlayer = new MusicPlayer(document.querySelector(".player"));
 
-  function renderToplist(listData) {
-    document.querySelector(".toplistView").innerHTML = listData
-      .map(
-        list => `<div class="listItem">
-  <div class="picture" >
-      <img class="lazyload" data-src="${
-        list.picUrl
-      }" alt="" style="width:100px;height:100px;">
-    </div>
-    <div class="content">
-      <div class="title">${list.topTitle}</div>
-      ${songList(list.songList)}
-    </div>
-</div>`
-      )
-      .join("");
-    lazyload(document.querySelectorAll(".toplistView .lazyload"));
-  }
-  function songList(songs) {
-    return songs
-      .map(
-        (song, i) =>
-          `<p>${i + 1}
-    <span class="name">${song.songname}</span>
-    <span class="singer">- ${song.singername}</span>
-  </p>
-  `
-      )
-      .join("");
-  }
-
-  function render(json) {
-    renderSlide(json.data.slider);
-    renderRadio(json.data.radioList);
-    renderList(json.data.songList);
-    lazyload(document.querySelectorAll(".lazyload"));
-  }
 
   document.querySelector(".playerButton").addEventListener("click", function() {
     document.querySelector(".player").classList.remove("hide");
@@ -53,8 +17,8 @@
     document.querySelector(".player").classList.add("hide");
   });
 
-  let search = new Search(document.querySelector(".searchView"));
-  let musicPlayer = new MusicPlayer(document.querySelector(".player"));
+  onHashChange();
+  addEventListener("hashchange", onHashChange);
 
   function onHashChange() {
     let hash = decodeURIComponent(location.hash);
@@ -70,47 +34,5 @@
       musicPlayer.hide()
     }
   }
-  onHashChange();
-  window.addEventListener("hashchange", onHashChange);
+ 
 
-  window.player = musicPlayer;
-  function renderSlide(slides) {
-    slides = slides.map(slide => {
-      return { link: slide.linkUrl, image: slide.picUrl };
-    });
-    new Slides({
-      el: document.querySelector("#window"),
-      slides
-    });
-  }
-})();
-function renderRadio(radios) {
-  document.querySelector(".radio .list").innerHTML = radios
-    .map(
-      radio => `
-  <div class="listItem">
-  <div class="listMedia">
-    <img class="lazyload" data-src="${radio.picUrl}" alt="封面">
-    <span class="icon icon-play"></span>
-  </div>
-  <div class="listInfo">${radio.Ftitle}</div>
-  </div>`
-    )
-    .join("");
-}
-function renderList(songLists) {
-  document.querySelector(".hotList .list").innerHTML = songLists
-    .map(
-      list => `
-  <div class="listItem">
-  <div class="listMedia">
-    <img class="lazyload" data-src="${list.picUrl}" alt="封面">
-    <span class="icon icon-play"></span>
-  </div>
-  <div class="listInfo">${list.songListDesc}
-  <div class="listAuthor">${list.songListAuthor}</div>
-  </div>
-  </div>`
-    )
-    .join("");
-}

@@ -1,11 +1,12 @@
 let text = '技术原因，暂不支持'
 
-class MusicLyric {
-  constructor(el) {
+export class MusicLyric{
+  constructor(el,audio) {
     this.$el = el;
     this.$el.innerHTML = '<ul class="playerLyric"></ul>';
     this.$lyric = this.$el.querySelector(".playerLyric");
     this.index = 0;
+    this.$audio = audio
     this.currentTime = 0;
     this.text = 0;
     this.lyric = [];
@@ -29,6 +30,7 @@ class MusicLyric {
       .join("");
   }
   update() {
+    this.currentTime += Math.round(this.$audio.currentTime)
     this.processingData();
     this.time = +this.getlyricTime(this.lyricObj);
     if (this.index === this.lyric.length - 1) return this.reset();
@@ -44,7 +46,6 @@ class MusicLyric {
         break;
       }
     }
-    this.currentTime += 1;
     if (this.index) {
       let distance = (this.index - 4) * this.$lyric.firstChild.offsetHeight;
       this.$lyric.style.transform = `translateY(-${distance}px)`;

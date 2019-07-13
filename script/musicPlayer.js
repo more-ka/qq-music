@@ -1,11 +1,14 @@
-class MusicPlayer{
+import { MusicLyric } from './musicLyric.js'
+import { MusicProgress } from './mucisProgress.js'
+
+export class MusicPlayer{
   constructor(el){
     this.$el = el
     this.button = this.$el.querySelector('.playerFooter .play')
     this.button.addEventListener('click',this)
     this.createAudio()
     this.$audio = document.querySelector('audio')
-    this.musicLyric = new MusicLyric(this.$el.querySelector('.playerLyricWrapper'))
+    this.musicLyric = new MusicLyric(this.$el.querySelector('.playerLyricWrapper'),this.$audio)
     this.musicProgress = new MusicProgress(this.$el.querySelector('.progressWrapper'), 100 , true)
   }
   play(options = {}){
@@ -17,7 +20,7 @@ class MusicPlayer{
     this.$el.querySelector('.bg').style.background = `url${url}`
     if(options.songid){                                          
       this.songid = options.songid
-      this.$audio.src = `http://aqqmusic.tc.qq.com/amobile.music.tc.qq.com/C400${this.songid}.m4a?guid=407204717&vkey=DCFE945951744830BD7F1A06E6C828C9A22A738F33EBF6A15232D64AA70AC6C29C48B5949F411E48627AC87DB15B5298E3EC948F806D971B&uin=7596&fromtag=38`
+      this.$audio.src = `http://aqqmusic.tc.qq.com/amobile.music.tc.qq.com/C400${this.songid}.m4a?guid=407204717&vkey=9CA4990693C80F81F3BB8034F6D90E8FBC0D3AB44FDF715EE8D5EA85DA2DDBB3F4DAF846F4B4ECD232BC0E238579DA8F04539B82874BB621&uin=0&fromtag=38`
       // fetch(`https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg?-=MusicJsonCallback_lrc&pcachetime=1562916703597&songmid=${this.songid}&g_tk=1678736452&loginUin=1640627628&hostUin=0&format=json&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq.json&needNewCode=0`)
       //   .then(res=>res.json())
       //   .then(json=>json.lyric)
@@ -25,7 +28,6 @@ class MusicPlayer{
       //   .catch(()=>{})      
     }
     this.show()
-    // this.button.click()
     this.$audio.play()
     this.musicLyric.start()
     this.musicProgress.start()

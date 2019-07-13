@@ -1,4 +1,4 @@
-class Slides{
+export class Slides{
   constructor(options={}){
     this.$el = options.el
     this.slides = options.slides
@@ -10,7 +10,7 @@ class Slides{
   renderSlide(){
     this.$el.innerHTML = `<div class="slides" id="slides"></div>`
     this.$slides = this.$el.firstElementChild
-    this.$slides.style.width = `${this.slides.length*100}%`
+    this.$slides.style.width = `${this.slides.length*100}%`    
     this.$slides.innerHTML = this.slides.map(img=>
       `<div class="slidesItem">
       <a href="${img.link}">

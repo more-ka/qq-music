@@ -1,4 +1,4 @@
-class MusicProgress {
+export class MusicProgress {
   constructor(el, duration, start) {
     this.$el = el;
     this.currentTime = 0;
