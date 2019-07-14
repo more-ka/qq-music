@@ -20,13 +20,16 @@ ul, ol {
     margin-bottom: 8px; }
   .radio .list,
   .hotList .list {
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap; }
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
     .radio .list .listItem,
     .hotList .list .listItem {
       background: white;
       width: 40%;
-      flex: 1;
+      -ms-flex: 1;
+          flex: 1;
       margin-right: 8px;
       margin-bottom: 10px; }
       .radio .list .listItem .listMedia,
@@ -64,8 +67,10 @@ ul, ol {
         overflow: hidden; }
 
 .header {
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   height: 44px;
   background: #30c27c; }
   .header h1 {
@@ -81,13 +86,17 @@ ul, ol {
     display: inline-block;
     border-radius: 30px;
     position: absolute;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     cursor: pointer; }
 
 .window {
   width: 100%;
   overflow: hidden; }
   .window > .slides {
+    display: -ms-flexbox;
     display: flex;
     transition: .3s; }
     .window > .slides .slidesItem > a {
@@ -101,11 +110,13 @@ ul, ol {
   display: none; }
 
 .tabs ul {
+  display: -ms-flexbox;
   display: flex; }
   .tabs ul li {
     text-align: center;
     cursor: pointer;
-    flex: 1;
+    -ms-flex: 1;
+        flex: 1;
     height: 40px;
     line-height: 40px;
     color: rgba(0, 0, 0, 0.6);
